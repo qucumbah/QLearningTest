@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace QLearningTest.NeuralNetworks
 {
-    class NeuralNetwork
+    public class NeuralNetwork
     {
         public struct TrainingExample
         {
@@ -156,10 +156,6 @@ namespace QLearningTest.NeuralNetworks
                     " or deserialize network from file";
                 throw new InvalidOperationException(message);
             }
-            
-            NumberOfOutputs = (
-                layers[NumberOfLayers - 1].NumberOfOutputs
-            );
 
             if (initializeLayers)
             {
@@ -170,9 +166,13 @@ namespace QLearningTest.NeuralNetworks
                     layers[i].NumberOfInputs = layers[i - 1].NumberOfOutputs;
                     layers[i].Initialize();
                 }
-            }
+			}
 
-            Initialized = true;
+			NumberOfOutputs = (
+				layers[NumberOfLayers - 1].NumberOfOutputs
+			);
+
+			Initialized = true;
         }
         
         public float[] Calculate(float[] inputs, bool testMode = false)
@@ -301,8 +301,8 @@ namespace QLearningTest.NeuralNetworks
         {
             return new TrainingInfo()
             {
-                n = 0.005f,
-                numberOfEpochs = 5000,
+                n = 0.01f,
+                numberOfEpochs = 200,
                 batchesPerEpoch = 30,
                 batchSize = 10,
             };
@@ -437,8 +437,8 @@ namespace QLearningTest.NeuralNetworks
                 string layerSerialized = tokens[i + 2];
                 string layerTypeName = layerSerialized.Split(' ')[0];
                 Type layerType = Type.GetType(layerTypeName);
-                Layer layerInstance = (Layer)Activator.CreateInstance(layerType);
-                layerInstance.Deserialize(layerSerialized);
+                Layer layerInstance = ((Layer)Activator.CreateInstance(layerType))
+					.Deserialize(layerSerialized);
                 layers[i] = layerInstance;
             }
             

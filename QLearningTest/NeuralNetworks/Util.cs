@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace QLearningTest.NeuralNetworks
 {
-    class Util
+    public class Util
     {
         private Util() { }
 

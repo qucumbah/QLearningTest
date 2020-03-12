@@ -81,6 +81,12 @@
     <Compile Include="ImageClassifier\ImageClassifierPresentation.Designer.cs">
       <DependentUpon>ImageClassifierPresentation.cs</DependentUpon>
     </Compile>
+    <Compile Include="NetworkCreator\NetworkCreatorPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetworkCreator\NetworkCreatorPresentation.Designer.cs">
+      <DependentUpon>NetworkCreatorPresentation.cs</DependentUpon>
+    </Compile>
     <Compile Include="NeuralNetworks\Conv2DLayer.cs" />
     <Compile Include="NeuralNetworks\DropoutDenseLayer.cs" />
     <Compile Include="NeuralNetworks\MNIST.cs" />
@@ -103,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ImageClassifier\ImageClassifierPresentation.resx">
       <DependentUpon>ImageClassifierPresentation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NetworkCreator\NetworkCreatorPresentation.resx">
+      <DependentUpon>NetworkCreatorPresentation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

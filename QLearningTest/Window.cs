@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using QLearningTest.NetworkCreator;
 using QLearningTest.ImageClassifier;
 
 namespace QLearningTest
@@ -30,9 +32,12 @@ namespace QLearningTest
             switch (listBox1.SelectedIndex)
             {
                 case 0:
-                    //child = new BooleanSolverPresentation();
+                    child = new NetworkCreatorPresentation();
                     break;
                 case 1:
+                    //child = new BooleanSolverPresentation();
+                    break;
+                case 2:
                     child = new ImageClassifierPresentation();
                     break;
             }

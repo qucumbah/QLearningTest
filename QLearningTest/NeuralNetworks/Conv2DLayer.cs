@@ -2,7 +2,7 @@
 
 namespace QLearningTest.NeuralNetworks
 {
-    class Conv2DLayer : Layer
+    public class Conv2DLayer : Layer
     {
         public struct Conv2DInfo
         {
@@ -42,6 +42,9 @@ namespace QLearningTest.NeuralNetworks
         public int OutputWidth { get; protected set; }
         public int OutputHeight { get; protected set; }
 
+		//For serialization
+		public Conv2DLayer() { }
+
         public Conv2DLayer(
             ActivationFunction activationFunction,
             Conv2DInfo info
@@ -68,18 +71,18 @@ namespace QLearningTest.NeuralNetworks
             {
                 string message = "Padding can't be negative";
                 throw new ArgumentOutOfRangeException(message);
-            }
+			}
 
-            this.activationFunction = activationFunction;
+			if (
+				(info.kernelSize > info.inputWidth + info.padding) ||
+				(info.kernelSize > info.inputHeight + info.padding)
+			) {
+				string message = "Kernel size is larger than input size";
+				throw new ArgumentOutOfRangeException(message);
+			}
+
+			this.activationFunction = activationFunction;
             this.info = info;
-
-            if (
-                (info.kernelSize > info.inputWidth + info.padding) ||
-                (info.kernelSize > info.inputHeight + info.padding)
-            ) {
-                string message = "Kernel size is larger than input size";
-                throw new ArgumentOutOfRangeException(message);
-            }
 
             OutputWidth = info.GetOutputWidth();
             OutputHeight = info.GetOutputHeight();
@@ -302,12 +305,12 @@ namespace QLearningTest.NeuralNetworks
             Conv2DLayer result = new Conv2DLayer(activationFunctionInstance, info);
             result.Initialize();
 
-            for (int i = 0; i < NumberOfWeights; i++)
+            for (int i = 0; i < result.NumberOfWeights; i++)
             {
-                weights[i] = float.Parse(tokens[7 + i]);
+                result.weights[i] = float.Parse(tokens[7 + i]);
             }
 
-            return this;
+            return result;
         }
     }
 }

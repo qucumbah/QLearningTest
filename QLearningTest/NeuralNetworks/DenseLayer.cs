@@ -2,7 +2,7 @@
 
 namespace QLearningTest.NeuralNetworks
 {
-    class DenseLayer : Layer
+    public class DenseLayer : Layer
     {
         private ActivationFunction activationFunction;
 

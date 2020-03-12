@@ -36,6 +36,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
+            "Network creator",
             "Boolean operation solver",
             "Image classifier"});
             this.listBox1.Location = new System.Drawing.Point(12, 12);

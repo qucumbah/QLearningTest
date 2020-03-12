@@ -2,7 +2,7 @@
 
 namespace QLearningTest.NeuralNetworks
 {
-    class Sigmoid : ActivationFunction
+    public class Sigmoid : ActivationFunction
     {
         public override float Calculate(float input)
         {

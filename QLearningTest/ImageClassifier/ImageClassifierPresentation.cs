@@ -17,6 +17,8 @@ namespace QLearningTest.ImageClassifier
     {
         private byte[] image = new byte[28 * 28];
         private NeuralNetwork network;
+		private ProgressBar[] progressBars;
+
         public ImageClassifierPresentation()
         {
             InitializeComponent();
@@ -25,8 +27,20 @@ namespace QLearningTest.ImageClassifier
             {
                 Util.InitializeMNIST();
             }
+			
+			progressBars = new ProgressBar[10];
+			progressBars[0] = progressBar1;
+			progressBars[1] = progressBar2;
+			progressBars[2] = progressBar3;
+			progressBars[3] = progressBar4;
+			progressBars[4] = progressBar5;
+			progressBars[5] = progressBar6;
+			progressBars[6] = progressBar7;
+			progressBars[7] = progressBar8;
+			progressBars[8] = progressBar9;
+			progressBars[9] = progressBar10;
 
-            Rerender();
+			Rerender();
         }
 
         private void ImageClassifierForm_Load(object sender, EventArgs e)
@@ -59,7 +73,34 @@ namespace QLearningTest.ImageClassifier
         private void Rerender()
         {
             RenderWindow.Invalidate();
-        }
+
+			if (network == null)
+			{
+				return;
+			}
+
+			var imageNormalized = new float[784];
+			for (int i = 0; i < 784; i++)
+			{
+				imageNormalized[i] = image[i] / 255f;
+			}
+			float[] predictions = network.Calculate(imageNormalized);
+
+			for (int i = 0; i < 10; i++)
+			{
+				progressBars[i].Value = (int)(predictions[i] * 100f);
+			}
+
+			int maxIndex = 0;
+			for (int i = 1; i < 10; i++)
+			{
+				if (predictions[i] > predictions[maxIndex])
+				{
+					maxIndex = i;
+				}
+			}
+			ResultLabel.Text = "Result: " + maxIndex;
+		}
 
         private void RenderWindow_Paint(object sender, PaintEventArgs e)
         {
@@ -195,7 +236,6 @@ namespace QLearningTest.ImageClassifier
                         throw new FormatException("This network can't classify images;" +
                             " it must have 784 inputs and 10 outputs");
                     }
-                    ClassifyButton.Enabled = true;
                 }
                 catch (Exception exception)
                 {
@@ -225,10 +265,10 @@ namespace QLearningTest.ImageClassifier
                 }
             }
 
-            MessageBox.Show(
+			MessageBox.Show(
                 "" + maxIndex,
                 "Prediction result"
             );
         }
-    }
+	}
 }

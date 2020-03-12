@@ -2,7 +2,7 @@
 
 namespace QLearningTest.NeuralNetworks
 {
-    class DropoutDenseLayer : Layer
+    public class DropoutDenseLayer : Layer
     {
         private ActivationFunction activationFunction;
         public float P { get; private set; }

@@ -2,7 +2,7 @@
 
 namespace QLearningTest.NeuralNetworks
 {
-    class ReLU : ActivationFunction
+    public class ReLU : ActivationFunction
     {
         private float leak;
         public ReLU(float leak)

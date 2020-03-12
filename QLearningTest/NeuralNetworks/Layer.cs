@@ -2,7 +2,7 @@
 
 namespace QLearningTest.NeuralNetworks
 {
-    abstract class Layer
+    public abstract class Layer
     {
         private int numberOfInputs;
 

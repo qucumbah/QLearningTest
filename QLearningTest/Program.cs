@@ -51,6 +51,7 @@ namespace QLearningTest
             NeuralNetwork.TrainingExample[] testingSet =
                 Util.GetLogicTestingExamples(logicOr);
             */
+            /*
             Util.InitializeMNIST();
             Util.MNISTInstance.GetExample(5);
 
@@ -80,12 +81,12 @@ namespace QLearningTest
             convInfo.stride = 1;
 
             var layers = new List<Layer>();
-            layers.Add(new Conv2DLayer(new Sigmoid(), convInfo));
+            //layers.Add(new Conv2DLayer(new Sigmoid(), convInfo));
             layers.Add(new DenseLayer(new Sigmoid(), 24));
             layers.Add(new DenseLayer(new Sigmoid(), 10));
 
-            var nn = new NeuralNetwork(784, layers);
-            //var nn = new NeuralNetwork().Deserialize( Util.ReadFromFile("784 32 24 10 5000 epochs.txt") );
+            //var nn = new NeuralNetwork(784, layers);
+            var nn = new NeuralNetwork().Deserialize( Util.ReadFromFile("test2.txt") );
             float error1 = nn.CalculateError(testingSet);
             Console.WriteLine(error1);
 
@@ -94,7 +95,7 @@ namespace QLearningTest
 
             //info.logger = Util.CreateFileLogger("training.log");
 
-            nn.Train(trainingSet, info);
+            //nn.Train(trainingSet, info);
 
             int count = 0;
             for (int i = 0; i < 1000; i++)
@@ -120,17 +121,18 @@ namespace QLearningTest
 
             float error2 = nn.CalculateError(testingSet);
             Console.WriteLine(error2);
-            
-            Util.WriteToFile("784 32 24 10 5000+ epochs.txt", nn.Serialize());
-            /*
+
+			//Util.WriteToFile("test2.txt", nn.Serialize());
+            */
+			/*
             Util.WriteToFile("test.txt", nn.Serialize());
             var nn2 = new NeuralNetwork().Deserialize( Util.ReadFromFile("test.txt") );
             Console.WriteLine(nn2.CalculateError(testingSet));
             */
 
-            //Console.Beep();
+			//Console.Beep();
 
-            StartApplication();
+			StartApplication();
 
             Console.ReadKey(true);
         }

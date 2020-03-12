@@ -3,7 +3,7 @@ using System.IO;
 
 namespace QLearningTest.NeuralNetworks
 {
-    class MNIST
+    public class MNIST
     {
         private byte[] labelsFile;
         private byte[] imagesFile;
