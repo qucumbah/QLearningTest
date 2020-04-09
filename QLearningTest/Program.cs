@@ -134,7 +134,7 @@ namespace QLearningTest
 
 			StartApplication();
 
-            Console.ReadKey(true);
+            //Console.ReadKey(true);
         }
 
         private static int MaxIndex(float[] arr)

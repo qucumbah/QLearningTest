@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
@@ -45,28 +43,14 @@
             this.HyperparamsToDefault = new System.Windows.Forms.Button();
             this.AddDenseLayerButton = new System.Windows.Forms.Button();
             this.AddConv2DLayerButton = new System.Windows.Forms.Button();
-            this.MainPanel.SuspendLayout();
+            this.MainPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TextBox_NumberOfInputs = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Controls.Add(this.groupBox1);
-            this.MainPanel.Location = new System.Drawing.Point(13, 12);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(659, 312);
-            this.MainPanel.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // OkButton
             // 
+            this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkButton.Location = new System.Drawing.Point(516, 498);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(75, 23);
@@ -77,6 +61,7 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.Location = new System.Drawing.Point(597, 498);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
@@ -87,6 +72,7 @@
             // 
             // SaveButton
             // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Location = new System.Drawing.Point(435, 498);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
@@ -97,6 +83,7 @@
             // 
             // Textbox_LearningSpeed
             // 
+            this.Textbox_LearningSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Textbox_LearningSpeed.Location = new System.Drawing.Point(13, 366);
             this.Textbox_LearningSpeed.Name = "Textbox_LearningSpeed";
             this.Textbox_LearningSpeed.Size = new System.Drawing.Size(100, 20);
@@ -104,6 +91,7 @@
             // 
             // Textbox_NumberOfEpochs
             // 
+            this.Textbox_NumberOfEpochs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Textbox_NumberOfEpochs.Location = new System.Drawing.Point(13, 392);
             this.Textbox_NumberOfEpochs.Name = "Textbox_NumberOfEpochs";
             this.Textbox_NumberOfEpochs.Size = new System.Drawing.Size(100, 20);
@@ -111,6 +99,7 @@
             // 
             // Textbox_BatchSize
             // 
+            this.Textbox_BatchSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Textbox_BatchSize.Location = new System.Drawing.Point(12, 444);
             this.Textbox_BatchSize.Name = "Textbox_BatchSize";
             this.Textbox_BatchSize.Size = new System.Drawing.Size(100, 20);
@@ -118,6 +107,7 @@
             // 
             // Textbox_BatchesPerEpoch
             // 
+            this.Textbox_BatchesPerEpoch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Textbox_BatchesPerEpoch.Location = new System.Drawing.Point(12, 418);
             this.Textbox_BatchesPerEpoch.Name = "Textbox_BatchesPerEpoch";
             this.Textbox_BatchesPerEpoch.Size = new System.Drawing.Size(100, 20);
@@ -125,6 +115,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(119, 447);
             this.label1.Name = "label1";
@@ -134,6 +125,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(119, 421);
             this.label2.Name = "label2";
@@ -143,6 +135,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(119, 395);
             this.label3.Name = "label3";
@@ -152,6 +145,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(119, 369);
             this.label4.Name = "label4";
@@ -161,6 +155,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(13, 341);
             this.label5.Name = "label5";
@@ -170,6 +165,7 @@
             // 
             // HyperparamsToDefault
             // 
+            this.HyperparamsToDefault.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.HyperparamsToDefault.Location = new System.Drawing.Point(12, 470);
             this.HyperparamsToDefault.Name = "HyperparamsToDefault";
             this.HyperparamsToDefault.Size = new System.Drawing.Size(100, 23);
@@ -180,6 +176,7 @@
             // 
             // AddDenseLayerButton
             // 
+            this.AddDenseLayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddDenseLayerButton.Location = new System.Drawing.Point(554, 341);
             this.AddDenseLayerButton.Name = "AddDenseLayerButton";
             this.AddDenseLayerButton.Size = new System.Drawing.Size(118, 23);
@@ -190,18 +187,51 @@
             // 
             // AddConv2DLayerButton
             // 
+            this.AddConv2DLayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddConv2DLayerButton.Location = new System.Drawing.Point(554, 370);
             this.AddConv2DLayerButton.Name = "AddConv2DLayerButton";
             this.AddConv2DLayerButton.Size = new System.Drawing.Size(118, 23);
             this.AddConv2DLayerButton.TabIndex = 7;
             this.AddConv2DLayerButton.Text = "Add Conv2D layer";
             this.AddConv2DLayerButton.UseVisualStyleBackColor = true;
+            this.AddConv2DLayerButton.Click += new System.EventHandler(this.AddConv2DLayerButton_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.AutoScroll = true;
+            this.MainPanel.Location = new System.Drawing.Point(13, 12);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(659, 312);
+            this.MainPanel.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(260, 341);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Number of inputs";
+            // 
+            // TextBox_NumberOfInputs
+            // 
+            this.TextBox_NumberOfInputs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TextBox_NumberOfInputs.Location = new System.Drawing.Point(260, 366);
+            this.TextBox_NumberOfInputs.Name = "TextBox_NumberOfInputs";
+            this.TextBox_NumberOfInputs.Size = new System.Drawing.Size(100, 20);
+            this.TextBox_NumberOfInputs.TabIndex = 8;
             // 
             // NetworkCreatorPresentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 533);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.TextBox_NumberOfInputs);
             this.Controls.Add(this.AddConv2DLayerButton);
             this.Controls.Add(this.AddDenseLayerButton);
             this.Controls.Add(this.HyperparamsToDefault);
@@ -220,19 +250,15 @@
             this.Controls.Add(this.MainPanel);
             this.Name = "NetworkCreatorPresentation";
             this.Text = "NetworkCreator";
-            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel MainPanel;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox Textbox_LearningSpeed;
         private System.Windows.Forms.TextBox Textbox_NumberOfEpochs;
         private System.Windows.Forms.TextBox Textbox_BatchesPerEpoch;
@@ -245,5 +271,8 @@
         private System.Windows.Forms.Button HyperparamsToDefault;
         private System.Windows.Forms.Button AddDenseLayerButton;
         private System.Windows.Forms.Button AddConv2DLayerButton;
+        private System.Windows.Forms.FlowLayoutPanel MainPanel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TextBox_NumberOfInputs;
     }
 }
